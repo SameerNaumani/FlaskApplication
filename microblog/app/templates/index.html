@@ -1,0 +1,27 @@
+<!--<html>
+    <head>
+         {..}are placeholders or parameters that will be inputted at runtime utilize jinj2
+        {% if title %}  
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to MyBLOG!</title>
+        {%endif%}
+    </head>
+    <body>
+        <h1>Hello, {{user.username}}!</h1>
+        {% for post in posts %}
+        <div><p>{{ post.author.username }} says: <b>{{ post.body}} </b></p></div>
+        {% endfor %}
+    </body>
+</html>
+
+fill in the parameters when you call the function in routes.py-->
+
+{% extends "base.html" %} <!-- extends is inheritence -->
+
+{% block content %}
+    <h1>Hi, {{ user.username }}!</h1>
+    {% for post in posts %}
+    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+{% endblock %}
